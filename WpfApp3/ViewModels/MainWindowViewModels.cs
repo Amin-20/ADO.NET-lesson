@@ -11,30 +11,30 @@ namespace WpfApp3.ViewModels
 {
     public class MainWindowViewModels : BaseViewModel
     {
-        RelayCommand InsertCommand { get; set; }
-        RelayCommand DeleteRelayCommand { get; set; }
-        RelayCommand UpdateRelayCommand { get; set; }
-        RelayCommand ShowAllRelayCommand { get; set; }
+        public RelayCommand InsertCommand { get; set; }
+        public RelayCommand DeleteRelayCommand { get; set; }
+        public RelayCommand UpdateRelayCommand { get; set; }
+        public RelayCommand ShowAllRelayCommand { get; set; }
 
-        private TextBox id;
+        private int id;
 
-        public TextBox Id
+        public int Id
         {
             get { return id; }
             set { id = value; OnPropertyChanged(); }
         }
 
-        private TextBox firstName;
+        private string firstName;
 
-        public TextBox FirstName
+        public string FirstName
         {
             get { return firstName; }
             set { firstName = value; OnPropertyChanged(); }
         }
 
-        private TextBox lastName;
+        private string lastName;
 
-        public TextBox LastName
+        public string LastName
         {
             get { return lastName; }
             set { lastName = value; OnPropertyChanged(); }
@@ -51,12 +51,11 @@ namespace WpfApp3.ViewModels
 
         public MainWindowViewModels()
         {
-            AuthorsList= new ListBox();
+            AuthorsList = new ListBox();
 
             InsertCommand = new RelayCommand((obj) =>
             {
-                MessageBox.Show("YAXSI OGLAN", "Allahyar");
-                AuthorsList.Items.Add(FirstName.Text);
+                authorsList.Items.Add(FirstName);
 
 
             });
