@@ -24,8 +24,10 @@ namespace WpfApp3
         public MainWindow()
         {
             InitializeComponent();
+
             var vm = new MainWindowViewModels();
             this.DataContext = vm;
+
         }
     }
 }

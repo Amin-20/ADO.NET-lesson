@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using WpfApp3.Commands;
 
@@ -52,33 +53,31 @@ namespace WpfApp3.ViewModels
         {
             AuthorsList= new ListBox();
 
-            InsertCommand = new RelayCommand(obj =>
+            InsertCommand = new RelayCommand((obj) =>
             {
-                AuthorsList.Items.Add(firstName.Text);
+                MessageBox.Show("YAXSI OGLAN", "Allahyar");
+                AuthorsList.Items.Add(FirstName.Text);
+
+
+            });
+            
+          
+
+            DeleteRelayCommand = new RelayCommand((obj) =>
+            {
+
 
 
             });
 
 
-            DeleteRelayCommand = new RelayCommand(obj =>
-            {
-
-
-
+            UpdateRelayCommand = new RelayCommand((obj) => { 
+            
             });
 
-
-            UpdateRelayCommand = new RelayCommand(obj =>
-            {
-
-
-            });
-
-            ShowAllRelayCommand = new RelayCommand(obj =>
-            {
-
-
-
+            ShowAllRelayCommand = new RelayCommand((obj) => {
+            
+            
             });
 
 
