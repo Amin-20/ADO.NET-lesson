@@ -73,7 +73,6 @@
         <TextBox Text="{Binding FirstName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="15" Canvas.Left="126" Canvas.Top="62" HorizontalAlignment="Left" VerticalAlignment="Center" Width="104"></TextBox>
         <TextBox Text="{Binding LastName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="15" Canvas.Left="242" Canvas.Top="62" HorizontalAlignment="Left" VerticalAlignment="Center" Width="108"></TextBox>
         <ListBox ItemsSource="{Binding AuthorsList, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="257" Width="214" Canvas.Left="242" Canvas.Top="99" HorizontalAlignment="Center" VerticalAlignment="Top"></ListBox>
-        
         <Button Command="{Binding InsertCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource ButtonStyle1}" Height="33" Width="90" Canvas.Left="366" Canvas.Top="52" FontSize="20" Content="Insert" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Button.Background>
                 <LinearGradientBrush>
