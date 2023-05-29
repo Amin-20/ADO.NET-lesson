@@ -92,16 +92,7 @@
             </Button.Background>
         </Button>
 
-        <Button Command="{Binding UpdateCommand}" Style="{DynamicResource ButtonStyle1}" Height="45" Width="204" Canvas.Left="26" Canvas.Top="239" FontSize="20" Content="Update" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Button.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="Yellow" Offset="0"></GradientStop>
-                    <GradientStop Color="White" Offset="1"></GradientStop>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-        <Button Command="{Binding DeleteCommand}" Style="{DynamicResource ButtonStyle1}" Height="45" Width="204" Canvas.Left="26" Canvas.Top="168" FontSize="20" Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Button Command="{Binding DeleteCommand}" Style="{DynamicResource ButtonStyle1}" Height="45" Width="204" Canvas.Left="26" Canvas.Top="220" FontSize="20" Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Button.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Red" Offset="0"></GradientStop>
@@ -109,6 +100,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-
+        <TextBlock TextWrapping="Wrap" Text="After selecting the author, click the 'Delete' button." FontSize="18" Canvas.Left="28" Canvas.Top="127" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="218"></TextBlock>
     </Canvas>
 </Window>
