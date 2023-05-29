@@ -53,37 +53,7 @@ namespace WpfApp3.ViewModels
         {
             AuthorsRepo = new Repo();
             authors=new ObservableCollection<Author>(AuthorsRepo.GetAll());
-            
 
-            InsertCommand = new RelayCommand((obj) =>
-            {
-                
-
-
-            });
-            
-          
-
-            DeleteRelayCommand = new RelayCommand((obj) =>
-            {
-
-
-
-            });
-
-
-            UpdateRelayCommand = new RelayCommand((obj) => { 
-            
-            });
-
-            ShowAllRelayCommand = new RelayCommand((obj) => {
-            
-            
-            });
-
-
-
-        
         }
     }
 }
