@@ -33,19 +33,23 @@ namespace WpfApp3.Repository
                     {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            _authors[i].Id = int.Parse(reader[0].ToString());
-                            _authors[i].FirstName = reader[1].ToString();
-                            _authors[i].LastName = reader[2].ToString();
+                            _authors[i] = new Author
+                            {
+                                Id = int.Parse(reader[0].ToString()),
+                                FirstName = reader[1].ToString(),
+                                LastName = reader[2].ToString()
+                            };
                         }
                     }
                 }
             }
         }
-
         public ObservableCollection<Author> GetAll()
         {
             return _authors;
         }
+
+
 
     }
 }
