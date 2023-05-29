@@ -15,12 +15,21 @@ namespace WpfApp3.ViewModels
     public class MainWindowViewModels : BaseViewModel
     {
 
-        public ObservableCollection<Author> authors;
+        private ObservableCollection<Author> allAuthors;
+
+        public ObservableCollection<Author> AllAuthors
+        {
+            get { return allAuthors; }
+            set { allAuthors = value; }
+        }
+
+
+
         public Repo AuthorsRepo { get; set; }
         public RelayCommand InsertCommand { get; set; }
-        public RelayCommand DeleteRelayCommand { get; set; }
-        public RelayCommand UpdateRelayCommand { get; set; }
-        public RelayCommand ShowAllRelayCommand { get; set; }
+        public RelayCommand DeleteCommand { get; set; }
+        public RelayCommand UpdateCommand { get; set; }
+        public RelayCommand ShowAllCommand { get; set; }
 
         private int id;
 
@@ -32,7 +41,7 @@ namespace WpfApp3.ViewModels
 
         private string firstName;
 
-        public string FirstName
+        public string Firstname
         {
             get { return firstName; }
             set { firstName = value; OnPropertyChanged(); }
@@ -40,7 +49,7 @@ namespace WpfApp3.ViewModels
 
         private string lastName;
 
-        public string LastName
+        public string Lastname
         {
             get { return lastName; }
             set { lastName = value; OnPropertyChanged(); }
@@ -52,7 +61,20 @@ namespace WpfApp3.ViewModels
         public MainWindowViewModels()
         {
             AuthorsRepo = new Repo();
-            authors=new ObservableCollection<Author>(AuthorsRepo.GetAll());
+            AllAuthors =AuthorsRepo.GetAll();
+
+            InsertCommand = new RelayCommand((obj) =>
+            {
+                AuthorsRepo.Insert(Id, Firstname, Lastname);
+            });
+
+            //ShowAllCommand = new RelayCommand((obj) =>
+            //{
+            //    AllAuthors = AuthorsRepo.GetAll();
+            //});
+
+
+           
 
         }
     }
