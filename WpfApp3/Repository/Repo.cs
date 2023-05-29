@@ -12,7 +12,7 @@ namespace WpfApp3.Repository
 {
     public class Repo
     {
-        ObservableCollection<Author> _authors=new ObservableCollection<Author>();
+        ObservableCollection<Author> _authors = new ObservableCollection<Author>();
         SqlConnection conn;
         string cs = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
 
@@ -31,15 +31,13 @@ namespace WpfApp3.Repository
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
+                        Author author = new Author
                         {
-                            _authors[i] = new Author
-                            {
-                                Id = int.Parse(reader[0].ToString()),
-                                FirstName = reader[1].ToString(),
-                                LastName = reader[2].ToString()
-                            };
-                        }
+                            Id = int.Parse(reader[0].ToString()),
+                            FirstName = reader[1].ToString(),
+                            LastName = reader[2].ToString()
+                        };
+                        _authors.Add(author);
                     }
                 }
             }

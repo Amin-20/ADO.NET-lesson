@@ -46,22 +46,14 @@ namespace WpfApp3.ViewModels
             set { lastName = value; OnPropertyChanged(); }
         }
 
-        private ListBox authorsList;
-
-        public ListBox AuthorsList
-        {
-            get { return authorsList; }
-            set { authorsList = value; OnPropertyChanged(); }
-        }
+       
 
 
         public MainWindowViewModels()
         {
             AuthorsRepo = new Repo();
             authors=new ObservableCollection<Author>(AuthorsRepo.GetAll());
-            AuthorsList = new ListBox();
-            AuthorsList.ItemsSource = authors;
-            AuthorsList.DisplayMemberPath = nameof(Author.FirstName);
+            
 
             InsertCommand = new RelayCommand((obj) =>
             {
